@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Seo from '~/components/Seo';
+import Layout from '~/components/Layout';
 import { config } from '~/config/app';
 import styles from '~/styles/Home.module.css';
 
@@ -10,7 +11,8 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Seo title={appInfo.name} description={appInfo.defaultDescription} />
-      <main className={styles.main}>
+
+      <Layout>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -43,7 +45,7 @@ const Home: NextPage = () => {
             <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
           </a>
         </div>
-      </main>
+      </Layout>
 
       <footer className={styles.footer}>
         <a
