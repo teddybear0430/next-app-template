@@ -6,11 +6,11 @@ import { config } from '~/config/app';
 import styles from '~/styles/Home.module.css';
 
 const Home: NextPage = () => {
-  const { appInfo } = config;
+  const { name, defaultDescription } = config.appInfo;
 
   return (
     <div className={styles.container}>
-      <Seo title={appInfo.name} description={appInfo.defaultDescription} />
+      <Seo title={name} description={defaultDescription} />
 
       <Layout>
         <h1 className={styles.title}>
