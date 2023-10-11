@@ -6,5 +6,6 @@ const buildEslintCommand = (filenames) =>
 module.exports = {
   '*.{js,ts,tsx}': [buildEslintCommand, 'prettier --write'],
   // huskyからtscを実行すると、tsconfigファイルが検知されずエラーになるため、bashを通してtscを実行している
-  '*.{ts,tsx}': ["bash -c 'yarn check-types'"],
+  // パッケージマネージャによってコマンド変更する必要あり
+  '*.{ts,tsx}': ["bash -c 'pnpm check-types'"],
 };
